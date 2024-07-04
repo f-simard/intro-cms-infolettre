@@ -52,7 +52,7 @@ function icms_infolettre_deactivation() {
 register_deactivation_hook( __FILE__, 'icms_infolettre_deactivation' );
 
 
-// require_once(plugin_dir_path(__FILE__) . 'includes/mpp-panneau-admin.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/icms-infolettre-panneau-admin.php');
 // require_once(plugin_dir_path(__FILE__) . 'includes/mpp-modal-client.php');
 
 
@@ -63,4 +63,5 @@ function icms_infolettre_ajouter_styles_et_scripts() {
 	wp_enqueue_script( 'icms-infolettre-script' );
 	}
 
-add_action( 'wp_enqueue_scripts', 'icms_infolettre_ajouter_styles_et_scripts' );
+	//init pour les 2 cotes, sinon 1 chargement pour js/css client et un chargement js/css pour admin
+add_action( 'init', 'icms_infolettre_ajouter_styles_et_scripts' );

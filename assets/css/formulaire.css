@@ -1,0 +1,8 @@
+.formulaire-admin > div {
+    display: flex;
+    gap: 2rem;
+}
+
+.formulaire-admin > *+* {
+    margin-top: 0.75rem;
+}

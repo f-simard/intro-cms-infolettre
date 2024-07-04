@@ -11,3 +11,6 @@
 
 // 	return $result;
 // }
+
+//TODO: get parametres
+//TODO: get inscriptions
