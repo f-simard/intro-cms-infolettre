@@ -22,10 +22,10 @@ function icms_infolettre_activation() {
 			couleur_bg varchar(10) NOT NULL,
 			couleur_txt varchar(10) NOT NULL,
 			titre varchar(50) NOT NULL,
-			etiquette_nom varchar(50) NOT NULL,
-			etiquette_courriel varchar(50) NOT NULL,
-			etiquette_suivant varchar(50) NOT NULL,
-			etiquette_soumettre varchar(50) NOT NULL,
+			nom varchar(50) NOT NULL,
+			courriel varchar(50) NOT NULL,
+			btn_prochain varchar(50) NOT NULL,
+			btn_soumission varchar(50) NOT NULL,
 
 			PRIMARY KEY (id)
 			) $charset_collate";
@@ -37,10 +37,10 @@ function icms_infolettre_activation() {
 		$wpdb->insert($table_parametres, array(	'couleur_bg' => '#ffffff',
 												'couleur_txt' => '#000000',
 												'titre' => 'Inscrivez-vous à notre infolettre !',
-												'etiquette_nom' => 'Nom',
-												'etiquette_courriel' => 'Courriel',
-												'etiquette_suivant' => 'Suivant',
-												'etiquette_soumettre' => 'Soumettre'
+												'nom' => 'Nom',
+												'courriel' => 'Courriel',
+												'btn_prochain' => 'Suivant',
+												'btn_soumission' => 'Soumettre'
 											));
 		}
 

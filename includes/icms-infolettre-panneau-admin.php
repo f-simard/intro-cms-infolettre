@@ -21,8 +21,8 @@ add_action( 'admin_menu', 'icms_infolettre_ajouter_menu' );
  */
 function icms_infolettre_ajouter_formulaire() {
 
-	if( isset ($_POST['icms-infolettre-soumettre']) ) {
-		icms_infolettre_update_data();
+	if( isset ($_POST['icms-infolettre-enregistrer']) ) {
+		icms_infolettre_update_params();
 	}
 
 
@@ -39,6 +39,7 @@ function icms_infolettre_ajouter_formulaire() {
 	//mpp_afficher_data(); // Appelle la fonction qui affiche les datas
 }
 
+
 /**
  * charge le formulaire pour configurer l'infolettre
  */
@@ -48,6 +49,7 @@ function icms_infolettre_charger_formulaire(){
 	$template = ob_get_clean();
 	echo $template;
 }
+
 
 /**
  * charge le gabarit pour la liste des inscriptions à l'infolettre
@@ -60,28 +62,27 @@ function icms_infolettre_charger_inscription(){
 }
 
 
-
 /**
  * met à jour les configurations d'infolettre dans la base de données
  */
-function icms_infolettre_update_data(){
+function icms_infolettre_update_params(){
 	global $wpdb;
 
 	$icms_infolettre_couleur_bg = sanitize_hex_color( $_POST['icms-infolettre-couleur-bg'] );
 	$icms_infolettre_couleur_txt = sanitize_hex_color( $_POST['icms-infolettre-couleur-txt'] );
-	$icms_infolettre_titre = sanitize_text_field( $_POST['icms-infolettre-titre'] );
-	$icms_infolettre_etiquette_nom = sanitize_text_field( $_POST['icms-infolettre-etiquette-nom'] );
-	$icms_infolettre_etiquette_courriel = sanitize_text_field( $_POST['icms-infolettre-etiquette-courriel'] );
-	$icms_infolettre_etiquette_suivant = sanitize_text_field( $_POST['icms-infolettre-etiquette-suivant'] );
-	$icms_infolettre_etiquette_soumettre = sanitize_text_field( $_POST['icms-infolettre-etiquette-soumettre'] );
+	$icms_infolettre_param_titre = sanitize_text_field( $_POST['icms-infolettre-param-titre'] );
+	$icms_infolettre_param_nom = sanitize_text_field( $_POST['icms-infolettre-param-nom'] );
+	$icms_infolettre_param_courriel = sanitize_text_field( $_POST['icms-infolettre-param-courriel'] );
+	$icms_infolettre_param_prochain = sanitize_text_field( $_POST['icms-infolettre-param-prochain'] );
+	$icms_infolettre_param_soumission = sanitize_text_field( $_POST['icms-infolettre-param-soumission'] );
 
 	$data = [	'couleur_bg' => $icms_infolettre_couleur_bg,
 				'couleur_txt' => $icms_infolettre_couleur_txt,
-				'titre' => $icms_infolettre_titre,
-				'etiquette_nom' => $icms_infolettre_etiquette_nom,
-				'etiquette_courriel' => $icms_infolettre_etiquette_courriel,
-				'etiquette_suivant' => $icms_infolettre_etiquette_suivant,
-				'etiquette_soumettre' => $icms_infolettre_etiquette_soumettre,
+				'titre' => $icms_infolettre_param_titre,
+				'nom' => $icms_infolettre_param_nom,
+				'courriel' => $icms_infolettre_param_courriel,
+				'btn_prochain' => $icms_infolettre_param_prochain,
+				'btn_soumission' => $icms_infolettre_param_soumission,
 				];
 	$where = ['id' => 1];
 

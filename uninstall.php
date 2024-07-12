@@ -1,10 +1,14 @@
 <?php
-// Si uninstall.php n'est pas appelé par WordPress, die
-// const WP_UNINSTALL_PLUGIN défini par WP
+
+/**
+ * supprime les tables du plug in à la suppression du plugin
+ */
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
- die;
-}
+	die;
+};
+
 global $wpdb;
+
 $table_parametres = $wpdb->prefix . 'icms_infolettre_parametres';
 $wpdb->query( "DROP TABLE IF EXISTS $table_parametres" );
 

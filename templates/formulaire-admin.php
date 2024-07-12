@@ -10,26 +10,26 @@
         <input type="color" name="icms-infolettre-couleur-txt" id="icms-infolettre-couleur-txt">
     </div>
     <div>
-        <label for="icms-infolettre-titre">Titre de l'infolettre</label>
-        <input type="text" name="icms-infolettre-titre" id="icms-infolettre-titre">
+        <label for="icms-infolettre-param-titre">Titre de l'infolettre</label>
+        <input type="text" name="icms-infolettre-param-titre" id="icms-infolettre-param-titre">
     </div>
     <div>
-        <label for="icms-infolette-etiquette-nom">Étiquette pour le champ <i>Nom</i></label>
-        <input type="text" name="icms-infolettre-etiquette-nom" id="icms-infolettre-etiquette-nom">
+        <label for="icms-infolette-etiquette-nom">Intitulé pour le champ <i>Nom</i></label>
+        <input type="text" name="icms-infolettre-param-nom" id="icms-infolettre-param-nom">
     </div>
     <div>
-        <label for="icms-infolette-etiquette-courriel">Étiquette pour le champ <i>Courriel</i></label>
-        <input type="text" name="icms-infolettre-etiquette-courriel" id="icms-infolettre-etiquette-courriel">
+        <label for="icms-infolette-etiquette-courriel">Intitulé pour le champ <i>Courriel</i></label>
+        <input type="text" name="icms-infolettre-param-courriel" id="icms-infolettre-param-courriel">
     </div>
     <div>
-        <label for="icms-infolette-etiquette-suivant">Étiquette pour le bouton <i>Suivant</i></label>
-        <input type="text" name="icms-infolettre-etiquette-suivant" id="icms-infolettre-etiquette-suivant">
+        <label for="icms-infolette-etiquette-suivant">Intitulé pour le bouton <i>Suivant</i></label>
+        <input type="text" name="icms-infolettre-param-prochain" id="icms-infolettre-param-prochain">
     </div>
     <div>
-        <label for="icms-infolette-etiquette-soumettre">Étiquette pour le bouton <i>Soumettre</i></label>
-        <input type="text" name="icms-infolettre-etiquette-soumettre" id="icms-infolettre-etiquette-soumettre">
+        <label for="icms-infolette-etiquette-soumettre">Intitulé pour le bouton <i>Soumettre</i></label>
+        <input type="text" name="icms-infolettre-param-soumission" id="icms-infolettre-param-soumission">
     </div>
-    <input type="submit" name='icms-infolettre-soumettre' value="Soumettre">
+    <input type="submit" name='icms-infolettre-enregistrer' value="Enregistrer">
 </form>
 
 </div>
