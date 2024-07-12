@@ -3,11 +3,11 @@
 /**
  * retourne les parametres personnalisables de la modale
  */
-function icms_infolettre_getParams(){
+function iil_getParams(){
 
 	global $wpdb;
 
-	$query = "SELECT * FROM " . ICMS_INFOLETTRE_PARAMETRES . " WHERE id=1";
+	$query = "SELECT * FROM " . IIL_PARAMETRES . " WHERE id=1";
 	$results = $wpdb->get_results( $query );
 
 	return $results[0];
@@ -18,11 +18,11 @@ function icms_infolettre_getParams(){
 /**
  * retourne les inscriptions à l'infolettre
  */
-function icms_infolettre_getInscriptions(){
+function iil_getInscriptions(){
 
 	global $wpdb;
 
-	$query = "SELECT * FROM " . ICMS_INFOLETTRE_INSCRIPTIONS;
+	$query = "SELECT * FROM " . IIL_INSCRIPTIONS;
 	$results = $wpdb->get_results( $query );
 
 	return $results;

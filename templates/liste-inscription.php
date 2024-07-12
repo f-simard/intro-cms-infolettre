@@ -1,4 +1,4 @@
-<div class="icms-infolettre panneau-admin" >
+<div class="iil-panneau-admin" >
     <h1>Usagers inscris à l'infolettre</h1>
 	<table>
 		<tr>

@@ -1,0 +1,16 @@
+.ill-formulaire__admin > div {
+    display: flex;
+    gap: 2rem;
+	align-items: flex-start;
+}
+
+.ill-formulaire__admin > *+* {
+    margin-top: 0.75rem;
+}
+.ill-formulaire__admin label{
+	min-width: 30ch;
+}
+
+.ill-formulaire__admin input[type="text"]{
+	min-width: 30ch;
+}

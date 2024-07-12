@@ -9,8 +9,8 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 global $wpdb;
 
-$table_parametres = $wpdb->prefix . 'icms_infolettre_parametres';
+$table_parametres = $wpdb->prefix . 'iil_parametres';
 $wpdb->query( "DROP TABLE IF EXISTS $table_parametres" );
 
-$table_inscriptions = $wpdb->prefix . 'icms_infolettre_inscriptions';
+$table_inscriptions = $wpdb->prefix . 'iil_inscriptions';
 $wpdb->query( "DROP TABLE IF EXISTS $table_inscriptions" );

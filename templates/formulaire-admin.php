@@ -1,34 +1,34 @@
-<div class="icms-infolettre panneau-admin configuration">
+<div class="iil-panneau-admin">
     <h1><?php echo get_admin_page_title(); ?></h1>
-    <form class="formulaire-admin" action="" method="post">
+    <form class="ill-formulaire__admin" action="" method="post">
 		<div>
-			<label for="icms-infolettre-couleur-bg">Couleur de fond</label>
-			<input type="color" name="icms-infolettre-couleur-bg" id="icms-infolettre-couleur-bg" value="<?php echo esc_attr( $parametres->couleur_bg); ?>">
+			<label for="iil-couleur-bg">Couleur de fond</label>
+			<input type="color" name="iil-couleur-bg" id="iil-couleur-bg" value="<?php echo esc_attr( $parametres->couleur_bg); ?>">
 		</div>
 		<div>
-			<label for="icms-infolettre-couleur-txt">Couleur du texte</label>
-			<input type="color" name="icms-infolettre-couleur-txt" id="icms-infolettre-couleur-txt" value="<?php echo esc_attr( $parametres->couleur_txt); ?>">
+			<label for="iil-couleur-txt">Couleur du texte</label>
+			<input type="color" name="iil-couleur-txt" id="iil-couleur-txt" value="<?php echo esc_attr( $parametres->couleur_txt); ?>">
 		</div>
 		<div>
-			<label for="icms-infolettre-param-titre">Titre de l'infolettre</label>
-			<input type="text" name="icms-infolettre-param-titre" id="icms-infolettre-param-titre" value="<?php echo esc_attr( $parametres->titre); ?>">
+			<label for="iil-param-titre">Titre de l'infolettre</label>
+			<input type="text" name="iil-param-titre" id="iil-param-titre" value="<?php echo esc_attr( $parametres->titre); ?>">
 		</div>
 		<div>
 			<label for="icms-infolette-etiquette-nom">Intitulé pour le champ <i>Nom</i></label>
-			<input type="text" name="icms-infolettre-param-nom" id="icms-infolettre-param-nom" value="<?php echo esc_attr( $parametres->nom); ?>">
+			<input type="text" name="iil-param-nom" id="iil-param-nom" value="<?php echo esc_attr( $parametres->nom); ?>">
 		</div>
 		<div>
 			<label for="icms-infolette-etiquette-courriel">Intitulé pour le champ <i>Courriel</i></label>
-			<input type="text" name="icms-infolettre-param-courriel" id="icms-infolettre-param-courriel" value="<?php echo esc_attr( $parametres->courriel); ?>">
+			<input type="text" name="iil-param-courriel" id="iil-param-courriel" value="<?php echo esc_attr( $parametres->courriel); ?>">
 		</div>
 		<div>
 			<label for="icms-infolette-etiquette-suivant">Intitulé pour le bouton <i>Suivant</i></label>
-			<input type="text" name="icms-infolettre-param-prochain" id="icms-infolettre-param-prochain" value="<?php echo esc_attr( $parametres->btn_prochain); ?>">
+			<input type="text" name="iil-param-prochain" id="iil-param-prochain" value="<?php echo esc_attr( $parametres->btn_prochain); ?>">
 		</div>
 		<div>
 			<label for="icms-infolette-etiquette-soumettre">Intitulé pour le bouton <i>Soumettre</i></label>
-			<input type="text" name="icms-infolettre-param-soumission" id="icms-infolettre-param-soumission" value="<?php echo esc_attr( $parametres->btn_soumission); ?>">
+			<input type="text" name="iil-param-soumission" id="iil-param-soumission" value="<?php echo esc_attr( $parametres->btn_soumission); ?>">
 		</div>
-		<input type="submit" name='icms-infolettre-enregistrer' value="Enregistrer" value="<?php ?>">
+		<input type="submit" name='iil-enregistrer' value="Enregistrer" value="<?php ?>">
 	</form>
 </div>

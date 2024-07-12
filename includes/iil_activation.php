@@ -3,7 +3,7 @@
 /**
  * Ajoute une table wp_mon_premier_plugin à la base de données à l'activation du plugin
  */
-function icms_infolettre_activation() {
+function iil_activation() {
 
 	global $wpdb;
 
@@ -11,7 +11,7 @@ function icms_infolettre_activation() {
 
 	
 	//table de parametre de couleur de fond
-	$table_parametres = $wpdb->prefix . 'icms_infolettre_parametres';
+	$table_parametres = $wpdb->prefix . 'iil_parametres';
 
 	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_parametres'" ) != $table_parametres ) {
 
@@ -44,7 +44,7 @@ function icms_infolettre_activation() {
 
 
 	//table d'inscription
-	$table_inscriptions = $wpdb->prefix . 'icms_infolettre_inscriptions';
+	$table_inscriptions = $wpdb->prefix . 'iil_inscriptions';
 	
 	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_inscriptions'" ) != $table_inscriptions ) {
 		$sql = "CREATE TABLE $table_inscriptions (

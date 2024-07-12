@@ -10,7 +10,7 @@
  * animation slide-top
  * ----------------------------------------
  */
- @-webkit-keyframes mpp-modale__ouvert {
+ @-webkit-keyframes ill-modale__ouvert {
 	0% {
 	  -webkit-transform: translateY(-100px);
 			  transform: translateY(-100px);
@@ -20,7 +20,7 @@
 			  transform: translateY(0);
 	}
   }
-  @keyframes mpp-modale__ouvert {
+  @keyframes iil-modale__ouvert {
 	0% {
 	  -webkit-transform: translateY(-100px);
 			  transform: translateY(-100px);
@@ -32,7 +32,7 @@
   }
 
   
-.mpp-modale{
+.iil-modale{
 	background-color: pink;
 	margin-inline: auto;
 	padding: 1rem;
@@ -43,7 +43,7 @@
 }
 
 
-.mpp-modale__ouvert {
-	-webkit-animation: mpp-modale-ouvert 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 500ms both;
-	        animation: mpp-modale-ouvert 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 500ms both;
+.ill-modale__ouvert {
+	-webkit-animation: iil-modale-ouvert 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 500ms both;
+	        animation: iil-modale-ouvert 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 500ms both;
 }
