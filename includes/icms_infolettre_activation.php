@@ -4,15 +4,13 @@
  * Ajoute une table wp_mon_premier_plugin à la base de données à l'activation du plugin
  */
 function icms_infolettre_activation() {
-	// constante globale qui represente la connexion à la base de données
-	// fourni par l'api wordpress
+
 	global $wpdb;
 
 	$charset_collate = $wpdb->get_charset_collate();
 
-	/**
-	 * table de parametre de couleur de fond
-	 */
+	
+	//table de parametre de couleur de fond
 	$table_parametres = $wpdb->prefix . 'icms_infolettre_parametres';
 
 	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_parametres'" ) != $table_parametres ) {
@@ -30,7 +28,7 @@ function icms_infolettre_activation() {
 			PRIMARY KEY (id)
 			) $charset_collate";
 
-		//require once pour aller chercher dbDelta()
+
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
 
@@ -44,9 +42,8 @@ function icms_infolettre_activation() {
 											));
 		}
 
-	/**
-	 * table d'inscription
-	 */
+
+	//table d'inscription
 	$table_inscriptions = $wpdb->prefix . 'icms_infolettre_inscriptions';
 	
 	if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_inscriptions'" ) != $table_inscriptions ) {
@@ -58,8 +55,6 @@ function icms_infolettre_activation() {
 			PRIMARY KEY (id)
 			) $charset_collate";
 
-		//require once pour aller chercher dbDelta()
-		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
 	}
 

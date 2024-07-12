@@ -1,16 +1,24 @@
 <?php
 
-// /**
-//  * retourne parametre de couleur
-//  */
-// function mpp_get_couleur_bg(){
-// 	global $wpdb;
-// 	$query = "SELECT couleur_bg FROM " . MPP_PARAMETRES . " WHERE id=1";
-
-// 	$result = $wpdb->get_var($query);
-
-// 	return $result;
-// }
-
 //TODO: get parametres
-//TODO: get inscriptions
+/**
+ * retourne les parametres personnalisables de la modale
+ */
+function icms_infolettre_getParams(){
+
+	global $wpdb;
+
+	$query = "SELECT * FROM " . ICMS_INFOLETTRE_PARAMETRES . " WHERE id=1";
+	$results = $wpdb->get_results($query);
+
+	return $results[0];
+	
+}
+
+
+/**
+ * retourne les inscriptions à l'infolettre
+ */
+function icms_infolettre_getInscriptions(){
+
+}
