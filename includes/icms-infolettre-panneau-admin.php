@@ -38,13 +38,11 @@ function icms_infolettre_ajouter_formulaire() {
 /**
  * charge le formulaire pour configurer l'infolettre et la valeur de chaque paramètres dans la base données
  */
-function icms_infolettre_charger_formulaire(){
+function icms_infolettre_charger_formulaire() {
 
 	//récuprer la valeur des paramètres dans la base données
 	require_once('icms-infolettre-get-data.php');
 	$parametres = icms_infolettre_getParams();
-
-	echo $parametres->couleur_bg;
 
 	//afficher la données dans le formulaire
 	ob_start();
@@ -57,18 +55,27 @@ function icms_infolettre_charger_formulaire(){
 /**
  * charge le gabarit pour la liste des inscriptions à l'infolettre
  */
-function icms_infolettre_charger_inscription(){
-	ob_start();
-	include( dirname(plugin_dir_path( __FILE__ )) . '/templates/liste-inscription.php' );
-	$template = ob_get_clean();
-	echo $template;
+function icms_infolettre_charger_inscription() {
+
+	//récuprer la liste d'inscriptions dans la base données
+	require_once( 'icms-infolettre-get-data.php' );
+	$inscriptions = icms_infolettre_getInscriptions();
+
+	//afficher la liste d'inscriptions s'il y a au moins une inscription
+	if( !empty( $inscriptions ) ) {
+		ob_start();
+		include( dirname( plugin_dir_path( __FILE__ ) ) . '/templates/liste-inscription.php' );
+		$template = ob_get_clean();
+		echo $template;
+	}
+
 }
 
 
 /**
  * met à jour les configurations d'infolettre dans la base de données
  */
-function icms_infolettre_update_params(){
+function icms_infolettre_update_params() {
 	global $wpdb;
 
 	$icms_infolettre_couleur_bg = sanitize_hex_color( $_POST['icms-infolettre-couleur-bg'] );
@@ -89,5 +96,5 @@ function icms_infolettre_update_params(){
 				];
 	$where = ['id' => 1];
 
-	$wpdb->update( ICMS_INFOLETTRE_PARAMETRES, $data, $where);
+	$wpdb->update( ICMS_INFOLETTRE_PARAMETRES, $data, $where );
 }

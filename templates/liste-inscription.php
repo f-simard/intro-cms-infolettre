@@ -1,3 +1,20 @@
-<div class="icms-infolettre panneau-admin inscriptions" >
-    <h1>Inscriptions</h1>
+<div class="icms-infolettre panneau-admin" >
+    <h1>Usagers inscris à l'infolettre</h1>
+	<table>
+		<tr>
+			<th>Nom</th>
+			<th>Courriel</th>
+		</tr>
+		<?php
+		foreach( $inscriptions as $inscription ) {
+		?>
+			<tr>
+				<td><?php echo esc_html( $inscription->nom );?></td>
+				<td><?php echo esc_html( $inscription->courriel );?></td>
+			</tr>
+		<?php
+		}
+		?>
+
+	</table>
 </div>

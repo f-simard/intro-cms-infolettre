@@ -67,7 +67,7 @@ require_once(plugin_dir_path(__FILE__) . 'includes/icms-infolettre-panneau-admin
  */
 function icms_infolettre_ajouter_styles_et_scripts() {
 
-	wp_register_style( 'icms-infolettre-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
+	wp_register_style( 'icms-infolettre-style', plugins_url( 'assets/css/style.css', __FILE__ ) );
 	wp_enqueue_style( 'icms-infolettre-style' );
 
 	wp_register_script( 'icms-infolettre-script', plugins_url( 'assets/js/main.js', __FILE__ ) );
