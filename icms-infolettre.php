@@ -22,6 +22,7 @@ function icms_infolettre_definir_const(){
 		global $wpdb;
 		define('ICMS_INFOLETTRE_PARAMETRES', $wpdb->prefix . 'icms_infolettre_parametres');
 	};
+
 	if(!defined('ICMS_INFOLETTRE_INSCRIPTIONS')){
 		global $wpdb;
 		define('ICMS_INFOLETTRE_INSCRIPTIONS', $wpdb->prefix . 'icms_infolettre_inscriptions');
@@ -31,15 +32,16 @@ function icms_infolettre_definir_const(){
 add_action('plugin_loaded', 'icms_infolettre_definir_const', 0);
 
 
+/**
+ * Crée deux tables de l'activation du plug in, si celles-ci ne sont pas existantes
+ */
 require_once(plugin_dir_path(__FILE__) . 'includes/icms_infolettre_activation.php');
-//hook activation et desactivation doit rester dans main
 register_activation_hook( __FILE__, 'icms_infolettre_activation' );
 
 
 /**
  * Supprime la table wp_mon_premier_plugin à la base de données à la désactivation du plugin
  */
-// utiliser le hook at desactivation en developpement seulement. sinon supprime table a chaque desactivation. ce n'est pas souhaite en prod si on "accroche" le bouton
 function icms_infolettre_deactivation() {
 	global $wpdb;
 	$table_parametres = $wpdb->prefix . 'icms_infolettre_parametres';
@@ -47,21 +49,26 @@ function icms_infolettre_deactivation() {
 
 	$table_inscriptions = $wpdb->prefix . 'icms_infolettre_inscriptions';
 	$wpdb->query( "DROP TABLE IF EXISTS $table_inscriptions" );
-	};
+};
 
 register_deactivation_hook( __FILE__, 'icms_infolettre_deactivation' );
 
 
+/**
+ * ajoute un panneau pour personaliser la modale du côté admin
+ */
 require_once(plugin_dir_path(__FILE__) . 'includes/icms-infolettre-panneau-admin.php');
-// require_once(plugin_dir_path(__FILE__) . 'includes/mpp-modal-client.php');
 
 
+/**
+ * charge les styles et scripts
+ */
 function icms_infolettre_ajouter_styles_et_scripts() {
 	wp_register_style( 'icms-infolettre-style', plugins_url( 'assets/css/main.css', __FILE__ ) );
 	wp_enqueue_style( 'icms-infolettre-style' );
+	
 	wp_register_script( 'icms-infolettre-script', plugins_url( 'assets/js/main.js', __FILE__ ) );
 	wp_enqueue_script( 'icms-infolettre-script' );
-	}
+};
 
-	//init pour les 2 cotes, sinon 1 chargement pour js/css client et un chargement js/css pour admin
 add_action( 'init', 'icms_infolettre_ajouter_styles_et_scripts' );
