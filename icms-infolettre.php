@@ -19,14 +19,14 @@ if(!defined('ABSPATH')){
  */
 function iil_definir_const(){
 
-	if(!defined('IIL_PARAMETRES')){
+	if( !defined('IIL_PARAMETRES' ) ){
 		global $wpdb;
-		define('IIL_PARAMETRES', $wpdb->prefix . 'iil_parametres');
+		define ( 'IIL_PARAMETRES', $wpdb->prefix . 'iil_parametres' );
 	};
 
-	if(!defined('IIL_INSCRIPTIONS')){
+	if( !defined( 'IIL_INSCRIPTIONS' )){
 		global $wpdb;
-		define('IIL_INSCRIPTIONS', $wpdb->prefix . 'iil_inscriptions');
+		define( 'IIL_INSCRIPTIONS', $wpdb->prefix . 'iil_inscriptions' );
 	}
 
 }
@@ -36,7 +36,7 @@ add_action('plugin_loaded', 'iil_definir_const', 0);
 /**
  * Crée deux tables de l'activation du plug in, si celles-ci ne sont pas existantes
  */
-require_once(plugin_dir_path(__FILE__) . 'includes/iil_activation.php');
+require_once( plugin_dir_path( __FILE__ ) . 'includes/iil_activation.php' );
 register_activation_hook( __FILE__, 'iil_activation' );
 
 
@@ -58,8 +58,17 @@ register_deactivation_hook( __FILE__, 'iil_deactivation' );
 
 /**
  * ajoute un panneau pour personaliser la modale du côté admin
+ * l'administrateur peut modifier personnaliser la modale d'inscription à l'infolettre
+ * l'administrateur peut voir la liste des inscriptions
  */
-require_once(plugin_dir_path(__FILE__) . 'includes/iil-panneau-admin.php');
+require_once( plugin_dir_path ( __FILE__ ) . 'includes/iil-panneau-admin.php' );
+
+
+/**
+ * ajoute la modale pour s'inscrire à l'infolettre
+ * enregistrer les inscriptions dans la base de donnée
+ */
+require_once( plugin_dir_path ( __FILE__ ) . 'includes/ill-modale-inscription.php' );
 
 
 /**

@@ -30,8 +30,6 @@ function iil_ajouter_formulaire() {
 	iil_charger_formulaire();
 	iil_charger_inscription();
 
-	//require_once('iil-get-data.php');
-	//mpp_afficher_data(); // Appelle la fonction qui affiche les datas
 }
 
 
@@ -49,6 +47,7 @@ function iil_charger_formulaire() {
 	include( dirname(plugin_dir_path( __FILE__ )) . '/templates/formulaire-admin.php' );
 	$template = ob_get_clean();
 	echo $template;
+
 }
 
 
@@ -76,6 +75,7 @@ function iil_charger_inscription() {
  * met à jour les configurations d'infolettre dans la base de données
  */
 function iil_update_params() {
+
 	global $wpdb;
 
 	$iil_couleur_bg = sanitize_hex_color( $_POST['iil-couleur-bg'] );
@@ -97,4 +97,5 @@ function iil_update_params() {
 	$where = ['id' => 1];
 
 	$wpdb->update( IIL_PARAMETRES, $data, $where );
+	
 }
