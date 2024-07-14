@@ -1,6 +1,7 @@
 
 .iil-modale{
-	padding: 1rem;
+
+	padding: 2rem;
 
 	display: flex;
 	align-items: center;
@@ -20,5 +21,19 @@
 .iil-modale__ouvert{
 	opacity: 1;
 	transform: translateY(-10px);
+}
+
+.iil-modale__boutonFermer{
+	padding: 0.2rem;
+
+	position: absolute;
+	top: 0.3rem;
+	right: 0.5rem;
+
+	cursor: pointer;
+}
+
+.iil-modale__fermer{
+	display: none;
 }
 

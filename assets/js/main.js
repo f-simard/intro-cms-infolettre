@@ -30,12 +30,17 @@ function init() {
 		panneauHTML = formulaireInscriptionHTML.querySelectorAll( "[data-panneau]" );
 		boutonsHTML = formulaireInscriptionHTML.querySelectorAll( "button" );
 		boutonSoumettreHTML = formulaireInscriptionHTML.querySelector("input[type='submit'");
+		boutonFermerModaleHTML = document.querySelector(".iil-modale__boutonFermer");
 	
 	 });
 
 	 //attendre que le dom soit chargé
 	 //solution src: chatgpt - defi: utilisation de la valeur des assignations des variables en dehors du eventListener sur windows.
 	 setTimeout(function() {
+
+		//fermer la modale avec le bouton X
+		boutonFermerModaleHTML.addEventListener("click", cacherModale);
+
 		//prevenir la soumission avant la validation du formulaire
 		formulaireInscriptionHTML.addEventListener( "submit" , bloquerSoumission);
 
@@ -74,6 +79,17 @@ function init() {
 	}, 1000);
 
 }
+
+
+/**
+ * fermer la modale 
+ */
+function cacherModale() {
+
+	modaleHTML.classList.replace("iil-modale__ouvert", "iil-modale__fermer")
+
+}
+
 
 /**
  * cacher les panneaux
