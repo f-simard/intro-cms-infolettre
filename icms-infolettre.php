@@ -57,21 +57,6 @@ register_deactivation_hook( __FILE__, 'iil_deactivation' );
 
 
 /**
- * ajoute un panneau pour personaliser la modale du côté admin
- * l'administrateur peut modifier personnaliser la modale d'inscription à l'infolettre
- * l'administrateur peut voir la liste des inscriptions
- */
-require_once( plugin_dir_path ( __FILE__ ) . 'includes/iil-panneau-admin.php' );
-
-
-/**
- * ajoute la modale pour s'inscrire à l'infolettre
- * enregistrer les inscriptions dans la base de donnée
- */
-require_once( plugin_dir_path ( __FILE__ ) . 'includes/ill-modale-inscription.php' );
-
-
-/**
  * charge les styles et scripts
  */
 function iil_ajouter_styles_et_scripts() {
@@ -84,3 +69,18 @@ function iil_ajouter_styles_et_scripts() {
 
 };
 add_action( 'init', 'iil_ajouter_styles_et_scripts' );
+
+
+/**
+ * ajoute un panneau pour personaliser la modale du côté admin
+ * l'administrateur peut modifier personnaliser la modale d'inscription à l'infolettre
+ * l'administrateur peut voir la liste des inscriptions
+ */
+require_once( plugin_dir_path ( __FILE__ ) . 'includes/iil-panneau-admin.php' );
+
+
+/**
+ * ajoute la modale pour s'inscrire à l'infolettre
+ * enregistrer les inscriptions dans la base de donnée
+ */
+require_once( plugin_dir_path ( __FILE__ ) . 'includes/ill-modale-inscription.php' );

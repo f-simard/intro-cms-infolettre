@@ -1,0 +1,63 @@
+
+.iil-formulaire__inscription h2 {
+	margin-top: 0.8rem;
+	font-size: 1.5rem;
+}
+
+.iil-formulaire__inscription .ill-formulaire_input {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.iil-formulaire__inscription .ill-formulaire_input > *:first-child {
+	flex-basis: 0;
+	flex-grow: 5;
+}
+
+.iil-formulaire__inscription .ill-formulaire_input > *:last-child {
+	max-width: 12ch;
+}
+
+
+.iil-formulaire__inscription .paire {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.iil-formulaire__inscription :is(label, input) {
+	font-size: 0.8rem;
+	padding: 0.5rem;
+
+	border-radius: 1px;
+	border: none;
+}
+
+.iil-formulaire__inscription :is(button, input[type=submit]) {
+	font-size: 0.8rem;
+	padding-inline: 0.5rem;
+	padding-block: 0.25rem;
+
+	border-radius: 2px;
+	border: none;
+}
+
+.iil-formulaire__inscription :is(button, input[type=submit]):hover {
+	scale: 1.05;
+}
+
+.iil-formulaire__inscription :is(button, input[type=submit]):active {
+	scale: 0.98;
+}
+
+.iil-formulaire__inscription input[type=submit] {
+	display: block;
+	margin-inline: auto;
+}
+
+.iil-formulaire__inscription section.invisible{
+	display: none;
+}
