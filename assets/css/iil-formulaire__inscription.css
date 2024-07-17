@@ -5,6 +5,8 @@
 }
 
 .iil-formulaire__inscription .ill-formulaire_input {
+	margin-top: 1rem;
+
 	display: flex;
 	gap: 1rem;
 	align-items: center;
@@ -23,20 +25,21 @@
 
 .iil-formulaire__inscription .paire {
 	display: flex;
+	gap: 0.5rem;
 	align-items: center;
 	justify-content: space-between;
 }
 
 
-.iil-formulaire__inscription :is(label, input) {
+.iil-formulaire__inscription .ill-formulaire_input input {
 	font-size: 0.8rem;
-	padding: 0.5rem;
+	padding: 0.3rem;
 
 	border-radius: 1px;
 	border: none;
 }
 
-.iil-formulaire__inscription :is(button, input[type=submit]) {
+.iil-formulaire__inscription .ill-formulaire_input :is(button, input[type=submit]) {
 	font-size: 0.8rem;
 	padding-inline: 0.5rem;
 	padding-block: 0.25rem;

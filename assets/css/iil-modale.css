@@ -1,4 +1,9 @@
 
+.iil-modale.iil-modale__reset :is(input,label){
+	margin: 0;
+	padding: 0;
+}
+
 .iil-modale{
 
 	padding: 2rem;
