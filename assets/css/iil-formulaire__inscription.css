@@ -36,7 +36,7 @@
 	padding: 0.3rem;
 
 	border-radius: 1px;
-	border: none;
+	border: 1px solid grey;
 }
 
 .iil-formulaire__inscription .ill-formulaire_input :is(button, input[type=submit]) {
@@ -45,7 +45,7 @@
 	padding-block: 0.25rem;
 
 	border-radius: 2px;
-	border: none;
+	border: 1px solid grey;
 }
 
 .iil-formulaire__inscription :is(button, input[type=submit]):hover {
