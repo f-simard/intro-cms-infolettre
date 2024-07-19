@@ -26,12 +26,12 @@ function iil_insert_inscription() {
 
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-		if ( !empty( $_POST['iil-nom'] ) && !empty( $_POST['iil-courriel'] ) ) {
+		if ( !empty( $_POST[ 'iil-nom' ] ) && !empty( $_POST[ 'iil-courriel' ] ) ) {
 
 			global $wpdb;
 
-			$iil_nom = sanitize_text_field( $_POST['iil-nom'] );
-			$iil_courriel = sanitize_email( $_POST['iil-courriel'] );
+			$iil_nom = sanitize_text_field( $_POST[ 'iil-nom' ] );
+			$iil_courriel = sanitize_email( $_POST[ 'iil-courriel' ] );
 
 			$wpdb->insert( IIL_INSCRIPTIONS,
 				array(

@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: ICMS - Inscription Infolettre
 Description: Le plugin génère une modale pour inscription à une infolettre. Cette modale est personalisable par les adminisatrateurs.
@@ -6,27 +7,34 @@ Author: Filippa Simard
 Version: 1
 */
 
+
 /**
  * assure que la page est passée par la page d'index
  */
-if(!defined('ABSPATH')){
+if ( !defined( 'ABSPATH' ) ) {
+
 	exit;
+
 }
 
 
 /**
  * defini les constantes de plugin
  */
-function iil_definir_const(){
+function iil_definir_const() {
 
-	if( !defined('IIL_PARAMETRES' ) ){
+	if ( !defined('IIL_PARAMETRES' ) ) {
+
 		global $wpdb;
 		define ( 'IIL_PARAMETRES', $wpdb->prefix . 'iil_parametres' );
+
 	};
 
-	if( !defined( 'IIL_INSCRIPTIONS' )){
+	if ( !defined( 'IIL_INSCRIPTIONS' )) {
+		
 		global $wpdb;
 		define( 'IIL_INSCRIPTIONS', $wpdb->prefix . 'iil_inscriptions' );
+		
 	}
 
 }

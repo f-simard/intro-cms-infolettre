@@ -10,7 +10,7 @@ function iil_getParams(){
 	$query = "SELECT * FROM " . IIL_PARAMETRES . " WHERE id=1";
 	$results = $wpdb->get_results( $query );
 
-	return $results[0];
+	return $results[ 0 ];
 	
 }
 

@@ -4,7 +4,9 @@
  * supprime les tables du plug in à la suppression du plugin
  */
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+
 	die;
+	
 };
 
 global $wpdb;
