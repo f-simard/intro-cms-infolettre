@@ -34,7 +34,7 @@ function iil_definir_const() {
 		
 		global $wpdb;
 		define( 'IIL_INSCRIPTIONS', $wpdb->prefix . 'iil_inscriptions' );
-		
+
 	}
 
 }
@@ -49,19 +49,19 @@ register_activation_hook( __FILE__, 'iil_activation' );
 
 
 /**
- * Supprime la table wp_mon_premier_plugin à la base de données à la désactivation du plugin
+ * DEV SEULEMENT: Supprime la table wp_mon_premier_plugin à la base de données à la désactivation du plugin
  */
-function iil_deactivation() {
+// function iil_deactivation() {
 
-	global $wpdb;
-	$table_parametres = $wpdb->prefix . 'iil_parametres';
-	$wpdb->query( "DROP TABLE IF EXISTS $table_parametres" );
+// 	global $wpdb;
+// 	$table_parametres = $wpdb->prefix . 'iil_parametres';
+// 	$wpdb->query( "DROP TABLE IF EXISTS $table_parametres" );
 
-	$table_inscriptions = $wpdb->prefix . 'iil_inscriptions';
-	$wpdb->query( "DROP TABLE IF EXISTS $table_inscriptions" );
+// 	$table_inscriptions = $wpdb->prefix . 'iil_inscriptions';
+// 	$wpdb->query( "DROP TABLE IF EXISTS $table_inscriptions" );
 
-};
-register_deactivation_hook( __FILE__, 'iil_deactivation' );
+// };
+// register_deactivation_hook( __FILE__, 'iil_deactivation' );
 
 
 /**
